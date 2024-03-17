@@ -1,11 +1,22 @@
 require 'sinatra'
+require 'sinatra/reloader'
 
 get('/') do
-  erb(:application_layout.html)
 end
 
 get('/rock') do
-  "rock"
+  
+  moves = ["rock", "paper", "scissors"]
+  @comp_move = moves.sample
+
+  if @comp_move == "rock"
+    @outcome = "tied"
+  elsif @comp_move == "paper"
+    @outcome = "lost"
+  else @comp_move == "scissors"
+    @outcome = "won"
+  end
+  erb(:rock)
 end
 
 
