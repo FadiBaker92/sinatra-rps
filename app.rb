@@ -1,8 +1,19 @@
 require 'sinatra'
 
 get('/') do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  erb(:application_layout.html)
+end
+
+get('/rock') do
+  "rock"
+end
+
+
+get('/paper') do
+  "paper"
+end
+
+
+get('/scissors') do
+  "scissors"
 end
